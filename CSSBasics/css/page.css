@@ -1,0 +1,24 @@
+#container {
+    margin: 5px;
+}
+
+#test1 {
+    float: left;
+    width: 48%;
+    padding: 3px;
+    border: 1px solid black;
+}
+
+#test2 {
+    float: right;
+    width: 48%;
+    padding: 3px;
+    border: 1px solid black;
+}
+
+footer {
+    font-size: 0.75em;
+    background-color: black;
+    color: white;
+    clear: both;
+}

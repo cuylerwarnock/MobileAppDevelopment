@@ -1,0 +1,31 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+.cellFruit {
+    background-color: red;
+}
+
+.cellMeat {
+    background-color: aqua;
+}
+
+.cellFlower {
+    background-color: yellow;
+}
+
+.cellFruit,
+.cellMeat,
+.cellFlower {
+    border: 1px solid black;
+    padding-bottom: 50px;
+    display: inline-block;
+    width: 100px;
+}
+
+button {
+    width: 100%;
+}

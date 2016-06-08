@@ -1,0 +1,36 @@
+.highlight {
+    color: red;
+    font-style: italic;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+.category {
+    border: 1px solid blue;
+    font-size: .875em;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 170, 40);
+    font-weight: bold;
+}
+
+ul {
+    background-color: #39E807;
+}
+
+body {
+    font-family: "Arial";
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+#bumble h2 {
+    line-height: .8;
+}
