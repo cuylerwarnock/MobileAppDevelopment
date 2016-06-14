@@ -30,14 +30,14 @@
  window.onload = function () {
 
      var tableBody = "<ul>";
-     var row = "<li>";
-     for (var field in myData.items[0]) {
-         row += '<span class="cell' + myData.items[0][field] + '">' + myData.items[0][field] + '</span>';
-     }
-     row += "</li>";
-     tableBody += row;
+     //     var row = "<li>";
+     //     for (var field in myData.items[0]) {
+     //         row += '<span class="cell' + myData.items[0][field] + '">' + myData.items[0][field] + '</span>';
+     //     }
+     //     row += "</li>";
+     //     tableBody += row;
 
-     for (var i = 1; i < myData.items.length; i++) {
+     for (var i = 0; i < myData.items.length; i++) {
          row = "<li>";
          for (var field in myData.items[0]) {
              row += '<span class="cell' + myData.items[0][field] + '">' + myData.items[i][field] + '</span>';
