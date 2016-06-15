@@ -2,6 +2,7 @@ body {
     padding-top: 20px;
 }
 
+
 /*
 .old {
     display: none;
@@ -20,6 +21,7 @@ body {
 .cell {
     display: table-cell;
     padding: 5px;
+    color: white;
 }
 
 .border {
