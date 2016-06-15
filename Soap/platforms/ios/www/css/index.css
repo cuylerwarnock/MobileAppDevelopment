@@ -2,6 +2,38 @@ body {
     padding-top: 20px;
 }
 
+/*
 .old {
     display: none;
+}
+*/
+
+.table {
+    display: table;
+    border-collapse: collapse;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    padding: 5px;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.train_id {
+    background-color: #144B88;
+}
+
+.depart_time {
+    background-color: #F05325;
+}
+
+.destination {
+    background-color: #124B88;
 }

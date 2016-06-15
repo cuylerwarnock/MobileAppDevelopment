@@ -32,3 +32,8 @@
 .subList {
     list-style-type: none;
 }
+
+button {
+    background-color: white;
+    border: none;
+}
