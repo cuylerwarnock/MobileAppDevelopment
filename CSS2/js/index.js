@@ -32,3 +32,35 @@ var myData = {
         }
 ]
 };
+
+window.onload = function () {}
+
+function clearTags() {
+    var arr = document.getElementsByTagName("span");
+    for (i = 0; i < arr.length; i++)
+        arr[i].classList.remove("block", "hidden", "vhidden", "border");
+}
+
+function showMyTable() {
+    clearTags();
+    var table = document.getElementsByClassName("table");
+    var rows = document.getElementsByClassName("row");
+    var cells = document.getElementsByClassName("cell");
+
+    for (i = 0; i < cells.length; i++)
+        cells[i].classList.add("border");
+}
+
+function showMyList() {
+    clearTags();
+    var rows = document.getElementsByClassName("row");
+
+    for (r = 0; r < rows.length; r++) {
+        rows[r].classList.add("block", "border");
+
+        var cells = rows[r].getElementsByClassName("cell");
+
+        for (i = 0; i < cells.length; i++)
+            cells[i].classList.add("block");
+    }
+}

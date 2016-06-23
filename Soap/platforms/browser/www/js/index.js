@@ -59,7 +59,9 @@ function getWeather() {
 }
 
 function showWeather(xml) {
+    alert(0);
     var city = xml.getElementsByTagName('City')[0].firstChild.nodeValue;
+    alert(1);
     var temperature = xml.getElementsByTagName('Temperature')[0].firstChild.nodeValue;
     var description = xml.getElementsByTagName('Description')[0].firstChild.nodeValue;
 
@@ -67,7 +69,7 @@ function showWeather(xml) {
     output += "City: " + city + "<br />";
     output += "Temperature: " + temperature + "<br />";
     output += "Description: " + description + "<br />";
-
+    alert(2);
     document.getElementById("resultWeather").innerHTML = output;
 }
 
