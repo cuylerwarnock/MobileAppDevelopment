@@ -40,15 +40,42 @@
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
 
 
-    <title>Local Storage Example</title>
+    <title>Encrypt-It</title>
 </head>
 
 <body>
 
+    <div id="startPage" class="page">
+        <h1 id="startTitle" class="title">Welcome To Encrypt-It</h1>
+        <br/>
+        <button id="btnEncrypt" class="btnStartMenu" onclick="showPage('encryptPage');">Encrypt A Message</button>
+        <button id="btnDecrypt" class="btnStartMenu" onclick="showPage('decryptPage');">Decrypt A Message</button>
+        <button id="btnLearn" class="btnStartMenu" onclick="showPage('learnPage');">Learn About Encryption And Decryption</button>
+    </div>
 
+    <div id="encryptPage" class="page">
+        <h1 id="encryptTitle" class="title">Choose One Of The Following Ciphers For Encryption</h1>
+        <br/>
+        <button id="btnShiftEncrypt" class="btnEncryptMenu">Shift Cipher</button>
+        <button id="btnAffineEncrypt" class="btnEncryptMenu">Affine Cipher</button>
+        <button class="returnToHome" "btnEncryptMenu" onclick="showPage('startPage');">Return To Home</button>
+    </div>
 
+    <div id="decryptPage" class="page">
+        <h1 id="encryptTitle" class="title">Choose One Of The Following Ciphers For Decryption</h1>
+        <br/>
+        <button id="btnShiftDecrypt" class="btnDecryptMenu">Shift Cipher</button>
+        <button id="btnAffineDecrypt" class="btnDecryptMenu">Affine Cipher</button>
+        <button class="returnToHome" "btnDecryptMenu" onclick="showPage('startPage');">Return To Home</button>
+    </div>
 
-
+    <div id="learnPage" class="page">
+        <h1 id="learnTitle" class="title">Choose One Of The Following Ciphers To Learn About How It Works</h1>
+        <br/>
+        <button id="btnShiftLearn" class="btnLearnMenu">Shift Cipher</button>
+        <button id="btnAffineLearn" class="btnLearnMenu">Affine Cipher</button>
+        <button class="returnToHome" "btnLearnMenu" onclick="showPage('startPage');">Return To Home</button>
+    </div>
 
 </body>
 

@@ -98,7 +98,6 @@ function showOptions() {
 }
 
 function showPage(pgShow) {
-    //Makes pgGet visible -- and pgStore invisible
     var pages = document.getElementsByClassName("page");
     for (i = 0; i < pages.length; i++) {
         pg = pages[i];
@@ -106,11 +105,11 @@ function showPage(pgShow) {
         pg.classList.add("hide");
     }
     document.getElementById(pgShow).classList.add("show");
-    document.getElementById(pgShow).classList.remove("hide");
+document.getElementById(pgShow).classList.remove("hide");
 
-    //Clear all existing data
-    document.getElementById("result").innerHTML = "";
-    clearForm();
+//Clear all existing data
+document.getElementById("result").innerHTML = "";
+clearForm();
 }
 
 function item(upc, product, quantity) {

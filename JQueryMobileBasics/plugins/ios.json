@@ -1,0 +1,72 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.wordpress.cuylerwarnock.jquerymobilebasics"
+        }
+    },
+    "dependent_plugins": {}
+}
