@@ -23,27 +23,28 @@
     <title>AudioVideo</title>
 </head>
 
-    <body>
+<body>
     <h1>Hello</h1>
-        <button id="btnPlay">Play</button>
-        <button id="btnPause">Pause</button>
-        <button id="btnStop">Stop</button>
-        
-        <audio id="audioFile">
-            <source src="assets/threepigs.mp3">
-        </audio>
-        
-        <ul data-role="listview" data-inset="true">
-            <li data-role="list-divider">Story</li>
-            <li><a href="#" onclick="changeStory('threepigs')">Three Pigs</a></li>
-            <li><a href="#" onclick="changeStory('goldilocks')">Goldilocks</a></li>
-            <li><a href="#" onclick="changeStory('cinderella')">Cinderella</a></li>
-        </ul>
-        <div data-role="footer">
-        <img id="storyImg" src="img/threepigs.jpeg" style="width: 100%"/>
-        </div>
-        
-        <!--
+    <button id="btnPlay">Play</button>
+    <button id="btnPause">Pause</button>
+    <button id="btnStop">Stop</button>
+
+    <audio id="audioFile">
+        <source src="assets/threepigs.mp3">
+    </audio>
+
+    <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">Story</li>
+        <li><a href="#" onclick="changeStory('threepigs')">Three Pigs</a></li>
+        <li><a href="#" onclick="changeStory('goldilocks')">Goldilocks</a></li>
+        <li><a href="#" onclick="changeStory('cinderella')">Cinderella</a></li>
+    </ul>
+    <div data-role="footer">
+        <output id="timeOut">Elapsed Time: </output>
+        <img id="storyImg" src="img/threepigs.jpeg" style="width: 100%" />
+    </div>
+
+    <!--
     <audio id="audioFile" controls>
         <source src="assets/01_Mr_Roboto.mp3">
         <source src="assets/01_Mr_Roboto.ogg">
@@ -54,6 +55,6 @@
             <source src="assets/small.ogv">
         </video>
 -->
-    </body>
-    
+</body>
+
 </html>
