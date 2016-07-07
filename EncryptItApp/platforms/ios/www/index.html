@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/index.js"></script>
+
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+
+    <title>Encrypt It</title>
+</head>
+
+<body>
+
+    <div data-role="page" id="startPage">
+
+        <div data-role="header">
+            <h1>Welcome To Encrypt It</h1>
+        </div>
+
+        <div role="main" class="ui-content">
+            <a href="#encryptPage" class="ui-btn ui-corner-all">Encrypt A Message</a>
+            <a href="#decryptPage" class="ui-btn ui-corner-all">Decrypt A Message</a>
+            <a href="#learnPage" class="ui-btn ui-corner-all">Learn About Encryption And Decryption</a>
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="encryptPage">
+
+        <div data-role="header">
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Encryption</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h3>Choose One Of The Following Ciphers For Encryption:</h3>
+            <a href="#encryptShiftPage" class="ui-btn ui-corner-all">Shift Cipher</a>
+            <a href="#encryptAffinePage" class="ui-btn ui-corner-all">Affine Cipher</a>
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="encryptShiftPage">
+
+        <div data-role="header">
+            <a href="#encryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Shift Encryption</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <label for="msgShiftEncrypt">Message</label>
+            <textArea id="msgShiftEncrypt"></textArea>
+            <br/>
+            <label for="keyShiftEncrypt">Additive Key</label>
+            <input type="number" id="addKeyShiftEncrypt" />
+            <br/>
+            <div class="hide">
+                <label for="multKeyShiftEcrypt">Multiplicative Key</label>
+                <input type="number" id="multKeyShiftEncrypt" value=1></input>
+            </div>
+            <label for="switch">Preserve Spacing And Punctuation</label>
+            <input type="checkbox" id="switchShiftEncrypt" name="switch" data-role="flipswitch" />
+            <br/>
+            <button onclick="encrypt('msgShiftEncrypt','addKeyShiftEncrypt','multKeyShiftEncrypt','switchShiftEncrypt','ciphertextShiftEncrypt');" "show(btnCopyShift);">Encrypt</button>
+            <br/>
+            <div id="ciphertextShiftEncrypt"></div>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="encryptAffinePage">
+
+        <div data-role="header">
+            <a href="#encryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Affine Encryption</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <label for="msgAffineEncrypt">Message</label>
+            <textArea id="msgAffineEncrypt"></textArea>
+            <br/>
+            <label for="addKeyAffineEncrypt">Additive Key</label>
+            <input type="number" id="addKeyAffineEncrypt" />
+            <br/>
+            <label for="multKeyAffineEncrypt">Multiplicative Key (Key must be relatively prime to 26)</label>
+            <input type="number" id="multKeyAffineEncrypt" />
+            <br/>
+            <label for="switch">Preserve Spacing And Punctuation</label>
+            <input type="checkbox" id="switchAffineEncrypt" name="switch" data-role="flipswitch" />
+            <br/>
+            <button onclick="encrypt('msgAffineEncrypt','addKeyAffineEncrypt', 'multKeyAffineEncrypt', 'switchAffineEncrypt', 'ciphertextAffineEncrypt');">Encrypt</button>
+            <br/>
+            <div id="ciphertextAffineEncrypt"></div>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="decryptPage">
+
+        <div data-role="header">
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Decryption</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h3>Choose One Of The Following Ciphers For Decryption</h3>
+            <a href="#decryptShiftPage" class="ui-btn ui-corner-all">Shift Cipher</a>
+            <a href="#decryptAffinePage" class="ui-btn ui-corner-all">Affine Cipher</a>
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="decryptShiftPage">
+
+        <div data-role="header">
+            <a href="#decryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Shift Decryption</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <label for="msgShiftDecrypt">Message</label>
+            <textArea id="msgShiftDecrypt"></textArea>
+            <br/>
+            <label for="keyShiftDecrypt">Additive Key</label>
+            <input type="number" id="addKeyShiftDecrypt" />
+            <br/>
+            <div class="hide">
+                <label for="multKeyShiftDerypt">Multiplicative Key</label>
+                <input type="number" id="multKeyShiftDecrypt" value=1 />
+                <br/>
+            </div>
+            <button onclick="decrypt('msgShiftDecrypt','addKeyShiftDecrypt','multKeyShiftDecrypt','ciphertextShiftDecrypt');">Decrypt</button>
+            <br/>
+            <div id="ciphertextShiftDecrypt"></div>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="decryptAffinePage">
+
+        <div data-role="header">
+            <a href="#decryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Affine Decryption</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <label for="msgAffineDecrypt">Message</label>
+            <textArea id="msgAffineDecrypt"></textArea>
+            <br/>
+            <label for="addKeyAffineDecrypt">Additive Key</label>
+            <input type="number" id="addKeyAffineDecrypt" />
+            <br/>
+            <label for="multKeyAffineDecrypt">Multiplicative Key (Key must be relatively prime to 26)</label>
+            <input type="number" id="multKeyAffineDecrypt" />
+            <br/>
+            <button onclick="decrypt('msgAffineDecrypt','addKeyAffineDecrypt', 'multKeyAffineDecrypt', 'ciphertextAffineDecrypt');">Decrypt</button>
+            <br/>
+            <div id="ciphertextAffineDecrypt"></div>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="learnPage">
+
+        <div data-role="header">
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>About Ciphers</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <h3>Choose One Of The Following Ciphers To Learn About How It Works</h3>
+            <a href="#learnShiftPage" class="ui-btn ui-corner-all">Shift Cipher</a>
+            <a href="#learnAffinePage" class="ui-btn ui-corner-all">Affine Cipher</a>
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="learnShiftPage">
+        <div data-role="header">
+            <a href="#learnPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Shift Cipher</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p> Let K be the additive key chosen. A shift cipher is a cipher in which each letter given in the message is replaced with the letter that is K letters to the right of it with the end of the alphabet being wrapped around to the beginning. For example, if the message is "HEY" and K=3, then the resulting ciphertext would be "KHB" since "K" is three letters to the right of "H" and so on. </p>
+            <p>Mathematically, this process can be described as converting each letter into a number 0-25 and then adding K to the number. The result is then divided by 26 and the remainder is converted into the ciphertext letter. Let us again consider the message "HEY" with K=3. Note that "H" is the eighth letter, "E" is the fifth letter, and "Y" is the twenty-fifth letter. Therefore, "H"→7, "E"→4, and "Y"→24. Adding K to each number gives 10, 7, 27. We now divide each number by 26 and keep the remainder. Thus, we have 10, 7, 1. Now we convert these numbers to ciphertext and get "KHB".</p>
+
+            <p>It may seem wierd that we are assigning the alphabet to numbers 0-25 but it makes the calculations work very nice. Note that the same additive key is used in both encryption and decryption.</p>
+        </div>
+
+        <div data-role="footer">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="learnAffinePage">
+        <div data-role="header">
+            <a href="#learnPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
+            <h1>Affine Cipher</h1>
+            <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p>Let K be the additive key chosen and let M be the multiplicative key chosen. Unlike a shift cipher, and affine cipher can only be explained mathematicalls. Therefore, an affine cipher is a cipher in which each letter given in the message is first converted to a number 0-25. The resulting numbers are then multiplied by the multiplicative key M and divided by 26 and the remainders are kept. The additive key K is then added to the remainders and they are again divided by 26 and the remainders are kept. Finally, these letters are then converted back into the ciphertext. </p>
+
+            <p>For example, consider the message "HEY" with K=3 and M=5. Note that "H" is the eighth letter, "E" is the fifth letter, and "Y" is the twenty-fifth letter. Therefore, "H"→7, "E"→4, and "Y"→24. Multiplying each number by 5 yields 35, 20, 120. We now divide each number by 26 and keep the remainder. Thus, we have 9, 20, 16. We now add 3 to each of these numbers to obtain 12, 23, 19. Dividing these numbers by 26 and keeping the remainders gives us 12, 23, 19. Finally, we convert these numbers to our ciphertext to obtain "MXT".</p>
+
+            <p>One very important thing to remember is to only choose a number relatively prime to 26 as the multiplicative key. That is, do not choose any even numbers and do not choose multiples of 13. Numbers that are valid from 1-26 are 1, 3, 5, 7, 9, 11, 15, 17, 19. 21. 23, and 25.</p>
+
+            <p>It may seem wierd that we are assigning the alphabet to numbers 0-25 but it makes the calculations work very nice. Note that the same additive key and multiplicative key are used in both encryption and decryption.</p>
+        </div>
+
+    </div>
+
+    <div data-role="footer">
+
+    </div>
+    </div>
+
+</body>
+
+</html>
