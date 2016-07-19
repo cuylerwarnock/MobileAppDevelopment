@@ -29,9 +29,9 @@
 
     <script type="text/javascript" src="cordova.js"></script>
 
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.min.css" />
+    <script src=js/jquery-1.11.1.min.js></script>
+    <script src=js/jquery.mobile-1.4.3.min.js></script>
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <script src="js/index.js"></script>
@@ -46,7 +46,7 @@
 
     <div data-role="page" id="startPage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <h1>Welcome To Encrypt It</h1>
         </div>
 
@@ -63,7 +63,7 @@
 
     <div data-role="page" id="encryptPage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Encryption</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -82,7 +82,7 @@
 
     <div data-role="page" id="encryptShiftPage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#encryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Shift Encryption</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -111,7 +111,7 @@
 
     <div data-role="page" id="encryptAffinePage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#encryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Affine Encryption</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -139,7 +139,7 @@
 
     <div data-role="page" id="decryptPage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Decryption</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -158,7 +158,7 @@
 
     <div data-role="page" id="decryptShiftPage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#decryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Shift Decryption</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -185,7 +185,7 @@
 
     <div data-role="page" id="decryptAffinePage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#decryptPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Affine Decryption</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -210,7 +210,7 @@
 
     <div data-role="page" id="learnPage">
 
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>About Ciphers</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -228,7 +228,7 @@
     </div>
 
     <div data-role="page" id="learnShiftPage">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#learnPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Shift Cipher</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -238,7 +238,7 @@
             <p> Let K be the additive key chosen. A shift cipher is a cipher in which each letter given in the message is replaced with the letter that is K letters to the right of it with the end of the alphabet being wrapped around to the beginning. For example, if the message is "HEY" and K=3, then the resulting ciphertext would be "KHB" since "K" is three letters to the right of "H" and so on. </p>
             <p>Mathematically, this process can be described as converting each letter into a number 0-25 and then adding K to the number. The result is then divided by 26 and the remainder is converted into the ciphertext letter. Let us again consider the message "HEY" with K=3. Note that "H" is the eighth letter, "E" is the fifth letter, and "Y" is the twenty-fifth letter. Therefore, "H"→7, "E"→4, and "Y"→24. Adding K to each number gives 10, 7, 27. We now divide each number by 26 and keep the remainder. Thus, we have 10, 7, 1. Now we convert these numbers to ciphertext and get "KHB".</p>
 
-            <p>It may seem wierd that we are assigning the alphabet to numbers 0-25 but it makes the calculations work very nice. Note that the same additive key is used in both encryption and decryption.</p>
+            <p>It may seem strange that we are assigning the alphabet to numbers 0-25 but it makes the calculations work very nicely. Note that the same additive key is used in both encryption and decryption.</p>
         </div>
 
         <div data-role="footer">
@@ -247,7 +247,7 @@
     </div>
 
     <div data-role="page" id="learnAffinePage">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <a href="#learnPage" class="ui-btn ui-corner-all ui-btn-left ui-btn-icon-left ui-icon-carat-l">Back</a>
             <h1>Affine Cipher</h1>
             <a href="#startPage" class="ui-btn ui-corner-all ui-btn-right ui-btn-icon-right ui-icon-home">Home</a>
@@ -260,7 +260,7 @@
 
             <p>One very important thing to remember is to only choose a number relatively prime to 26 as the multiplicative key. That is, do not choose any even numbers and do not choose multiples of 13. Numbers that are valid from 1-26 are 1, 3, 5, 7, 9, 11, 15, 17, 19. 21. 23, and 25.</p>
 
-            <p>It may seem wierd that we are assigning the alphabet to numbers 0-25 but it makes the calculations work very nice. Note that the same additive key and multiplicative key are used in both encryption and decryption.</p>
+            <p>It may seem strange that we are assigning the alphabet to numbers 0-25 but it makes the calculations work very nicely. Note that the same additive key and multiplicative key are used in both encryption and decryption.</p>
         </div>
 
     </div>

@@ -42,7 +42,7 @@ function encrypt(msgIn, addKeyIn, multKeyIn, spaceIn, cipherIn) {
         addKey = addKey % 26 + 26;
     while (multKey < 0)
         multKey = multKey % 26 + 26;
-
+    multKey = multKey % 26;
     var possibleMultKey = false;
     for (i = 0; i < multKeys.length; i++) {
         if (multKeys[i] == multKey)
@@ -84,8 +84,6 @@ function decrypt(msgIn, addKeyIn, multKeyIn, cipherIn) {
     msg = msg.toUpperCase();
     var newMsg = "";
 
-    while (addKey < 0)
-        addKey = addKey % 26 + 26;
     while (multKey < 0)
         multKey = multKey % 26 + 26;
 
@@ -104,6 +102,8 @@ function decrypt(msgIn, addKeyIn, multKeyIn, cipherIn) {
     }
 
     addKey = 26 - addKey;
+    while (addKey < 0)
+        addKey = addKey % 26 + 26;
     for (i = 0; i < multKeys.length; i++) {
         if ((multKey * multKeys[i]) % 26 == 1) {
             multKey = multKeys[i];
